@@ -1,0 +1,56 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBS.Networking", "Libraries\MBS.Networking\MBS.Networking.csproj", "{DBD65B3F-81C8-4E44-B268-3FAB3B12AA1E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{D467FE04-85A5-4A46-8041-BD51883E62A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{7F4DE938-062A-4756-956F-B9E911075889}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBS.Networking.Plugins.HyperTextTransfer", "Plugins\MBS.Networking.Plugins.HyperTextTransfer\MBS.Networking.Plugins.HyperTextTransfer.csproj", "{5743EE32-F3ED-4162-A0E3-B105503BF139}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBS.Networking.Plugins.Voice", "Plugins\MBS.Networking.Plugins.Voice\MBS.Networking.Plugins.Voice.csproj", "{0A2D72AB-119C-4F0A-9D57-533572103E6C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{0C39B0E9-CD91-4211-A572-A22859D04228}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversalEditor.Core", "..\UniversalEditor\CSharp\Libraries\UniversalEditor.Core\UniversalEditor.Core.csproj", "{2D4737E6-6D95-408A-90DB-8DFF38147E85}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Applications", "Applications", "{0524D4D2-8602-4340-84D8-E0347968FAE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBS.Networking.TestProject", "Applications\MBS.Networking.TestProject\MBS.Networking.TestProject.csproj", "{4A90A6F1-B1F0-4C21-8B6C-B287296427BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBD65B3F-81C8-4E44-B268-3FAB3B12AA1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBD65B3F-81C8-4E44-B268-3FAB3B12AA1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBD65B3F-81C8-4E44-B268-3FAB3B12AA1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBD65B3F-81C8-4E44-B268-3FAB3B12AA1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5743EE32-F3ED-4162-A0E3-B105503BF139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5743EE32-F3ED-4162-A0E3-B105503BF139}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5743EE32-F3ED-4162-A0E3-B105503BF139}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5743EE32-F3ED-4162-A0E3-B105503BF139}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A2D72AB-119C-4F0A-9D57-533572103E6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A2D72AB-119C-4F0A-9D57-533572103E6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A2D72AB-119C-4F0A-9D57-533572103E6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A2D72AB-119C-4F0A-9D57-533572103E6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D4737E6-6D95-408A-90DB-8DFF38147E85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D4737E6-6D95-408A-90DB-8DFF38147E85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D4737E6-6D95-408A-90DB-8DFF38147E85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D4737E6-6D95-408A-90DB-8DFF38147E85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A90A6F1-B1F0-4C21-8B6C-B287296427BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A90A6F1-B1F0-4C21-8B6C-B287296427BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A90A6F1-B1F0-4C21-8B6C-B287296427BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A90A6F1-B1F0-4C21-8B6C-B287296427BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DBD65B3F-81C8-4E44-B268-3FAB3B12AA1E} = {D467FE04-85A5-4A46-8041-BD51883E62A6}
+		{5743EE32-F3ED-4162-A0E3-B105503BF139} = {7F4DE938-062A-4756-956F-B9E911075889}
+		{0A2D72AB-119C-4F0A-9D57-533572103E6C} = {7F4DE938-062A-4756-956F-B9E911075889}
+		{2D4737E6-6D95-408A-90DB-8DFF38147E85} = {0C39B0E9-CD91-4211-A572-A22859D04228}
+		{4A90A6F1-B1F0-4C21-8B6C-B287296427BA} = {0524D4D2-8602-4340-84D8-E0347968FAE0}
+	EndGlobalSection
+EndGlobal

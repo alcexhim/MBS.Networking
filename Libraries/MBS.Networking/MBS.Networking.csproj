@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DBD65B3F-81C8-4E44-B268-3FAB3B12AA1E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MBS.Networking</RootNamespace>
+    <AssemblyName>MBS.Networking</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Output\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Output\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Protocols\TransmissionControl\TransmissionControlProtocol.cs" />
+    <Compile Include="Protocol.cs" />
+    <Compile Include="Service.cs" />
+    <Compile Include="Server.cs" />
+    <Compile Include="ClientConnectedEvent.cs" />
+    <Compile Include="Transports\TCP\TCPTransport.cs" />
+    <Compile Include="Transport.cs" />
+    <Compile Include="Transports\TCP\TCPTransportClient.cs" />
+    <Compile Include="Transports\TCP\TCPTransportServer.cs" />
+    <Compile Include="TransportClient.cs" />
+    <Compile Include="TransportServer.cs" />
+    <Compile Include="DataReceivedEvent.cs" />
+    <Compile Include="TransportClientConnectedEvent.cs" />
+    <Compile Include="Protocols\PlainText\Request.cs" />
+    <Compile Include="Protocols\PlainText\PlainTextProtocol.cs" />
+    <Compile Include="Protocols\PlainText\Packet.cs" />
+    <Compile Include="Protocols\PlainText\Header.cs" />
+    <Compile Include="Protocols\PlainText\Response.cs" />
+    <Compile Include="Protocols\UniversalDatagram\UniversalDatagramProtocol.cs" />
+    <Compile Include="HashAlgorithmExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Protocols\" />
+    <Folder Include="Protocols\TransmissionControl\" />
+    <Folder Include="Transports\" />
+    <Folder Include="Transports\TCP\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\UniversalEditor\CSharp\Libraries\UniversalEditor.Core\UniversalEditor.Core.csproj">
+      <Project>{2D4737E6-6D95-408A-90DB-8DFF38147E85}</Project>
+      <Name>UniversalEditor.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
