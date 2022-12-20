@@ -14,5 +14,14 @@ namespace MBS.Networking.Protocols.HyperTextTransfer
 			Method = method;
 			Path = path;
 		}
+
+		public static Request Parse(string line)
+		{
+			string[] firstparts = line.Split(new char[] { ' ' }, 3);
+			if (firstparts.Length != 3)
+				throw new FormatException("must be three segments separated by space");
+
+			return new Request(firstparts[0], firstparts[1], firstparts[2]);
+		}
 	}
 }
