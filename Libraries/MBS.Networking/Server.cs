@@ -13,8 +13,8 @@ namespace MBS.Networking
 			ClientConnected?.Invoke(this, e);
 		}
 
-		private TransportServer _svr = null;
-		public void Start()
+		private System.Threading.Thread tServer = null;
+		private void tServer_ThreadStart()
 		{
 			if (_svr != null)
 			{
@@ -25,6 +25,28 @@ namespace MBS.Networking
 			_svr = Transport.CreateServer(Protocol);
 			_svr.ClientConnected += svr_ClientConnected;
 			_svr.Start();
+		}
+
+		private TransportServer _svr = null;
+		public void Start()
+		{
+			tServer = new System.Threading.Thread(tServer_ThreadStart);
+			tServer.Start();
+		}
+
+		public void Stop()
+		{
+			if (tServer != null)
+			{
+				tServer.Abort();
+				tServer = null;
+			}
+
+			if (_svr != null)
+			{
+				_svr.Stop();
+			}
+			_svr = null;
 		}
 
 		private void svr_ClientConnected(object sender, TransportClientConnectedEventArgs e)

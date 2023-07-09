@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 
 namespace MBS.Networking.Transports.TCP
@@ -9,6 +10,12 @@ namespace MBS.Networking.Transports.TCP
 		internal TCPTransportClient(System.Net.Sockets.TcpClient underlyingClient)
 		{
 			this.underlyingClient = underlyingClient;
+		}
+
+
+		protected override Stream GetStreamInternal()
+		{
+			return this.underlyingClient.GetStream();
 		}
 
 		public override int Available => (underlyingClient != null ? underlyingClient.Available : 0);

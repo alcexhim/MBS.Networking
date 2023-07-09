@@ -74,7 +74,15 @@ namespace MBS.Networking.Protocols.PlainText
 
 				while (!reader.EndOfStream)
 				{
-					string line = reader.ReadLine();
+					string line = null;
+					try
+					{
+						line = reader.ReadLine();
+					}
+					catch (EndOfStreamException ex)
+					{
+						break;
+					}
 					if (line.Contains(":"))
 					{
 						string[] lineParts = line.Split(new char[] { ':' }, 2);

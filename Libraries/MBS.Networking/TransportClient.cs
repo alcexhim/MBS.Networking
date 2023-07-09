@@ -12,6 +12,9 @@ namespace MBS.Networking
 			ConnectInternal(addr, port);
 		}
 
+		protected abstract System.IO.Stream GetStreamInternal();
+		public System.IO.Stream GetStream() { return GetStreamInternal(); }
+
 		public void Write(byte[] data)
 		{
 			Write(data, 0, data.Length);

@@ -40,6 +40,10 @@ namespace MBS.Networking
 			Read(data, 0, data.Length);
 			return data;
 		}
+		public void Write(string data)
+		{
+			Write(System.Text.Encoding.UTF8.GetBytes(data));
+		}
 		public void Write(byte[] data)
 		{
 			Write(data, 0, data.Length);
@@ -60,10 +64,31 @@ namespace MBS.Networking
 		{
 			if (client == null)
 			{
-				client = Transport.CreateClient(Protocol);
-				client.Connect(addr, port);
+				t = new System.Threading.Thread(t_ParameterizedThreadStart);
+				t.Start(new object[] { addr, port });
 			}
 		}
+
+		private System.Threading.Thread t = null;
+		private void t_ParameterizedThreadStart(object parm)
+		{
+			object[] parms = (object[])parm;
+			client = Transport.CreateClient(Protocol);
+			
+			System.Net.IPAddress addr = (System.Net.IPAddress)parms[0];
+			int port = (int)parms[1];
+			client.Connect(addr, port);
+
+			while (true)
+			{
+				if (client.Available > 0)
+				{
+					OnDataReceived(new DataReceivedEventArgs(client));
+				}
+				System.Threading.Thread.Sleep(50);
+			}
+		}
+
 
 		public bool WaitForData(int timeout = 10000)
 		{
